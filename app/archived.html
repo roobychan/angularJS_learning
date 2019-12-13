@@ -1,0 +1,7 @@
+<div class="container">
+  <div ng-controller="ArchivedCtr" class="col-md-8 align-self-center">
+    <h1>Archived:</h1>
+    <div task ng-repeat="task in taskList | filter: {isArchived: true}" item="task" item-index="{{$index}}"
+      on-delete="delete(index)"></div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <div ng-controller="TodoCtr" class="col-md-8 align-self-center">
+    <h1>Todo:</h1>
+    <div task ng-repeat="task in taskList | filter: {isArchived: false}" item="task" item-index="{{$index}}"
+      on-delete="delete(index)" on-archive="archive(index)"></div>
+    <br>
+    <form ng-submit="add(name)">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="New Task" ng-model="name" required>
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit" id="button-addon2">Add</button>
+        </div>
+      </div>
+    </form>
+    <br>
+  </div>
+</div>
