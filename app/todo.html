@@ -1,7 +1,7 @@
 <div class="container">
   <div ng-controller="TodoCtr" class="col-md-8 align-self-center">
     <h1>Todo:</h1>
-    <div task ng-repeat="task in taskList | filter: {isArchived: false}" item="task" item-index="{{$index}}"
+    <div task ng-repeat="task in taskList"  item="task" item-index="{{$index}}"
       on-delete="delete(index)" on-archive="archive(index)"></div>
     <br>
     <form ng-submit="add(name)">

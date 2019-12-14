@@ -4,9 +4,7 @@
   angular
     .module('todoApp')
     .service('taskServ', [function() {
-      this.taskList =[
-        {name:'task1', isDone:false, isArchived:false},
-        {name:'task2', isDone:false, isArchived:false}
-      ];
+      this.taskList = [];
+      this.archivedList = [];
   }]);
 })(window.angular);

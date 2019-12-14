@@ -3,6 +3,7 @@
   angular.module('todoApp',['ngRoute'])
     .controller('TodoCtr', ['$scope', 'taskServ', function($scope,taskServ){
       $scope.taskList = taskServ.taskList;
+      $scope.archivedList = taskServ.archivedList;
       $scope.name = '';
 
       $scope.delete = function (index) {
@@ -13,15 +14,18 @@
         $scope.name = '';
       };
       $scope.archive = function (index) {
-        $scope.taskList[index].isArchived = true;
+        var archiveTask = $scope.taskList.splice(index, 1)[0];
+        archiveTask.isArchived = true;
+        $scope.archivedList.push(archiveTask);
       };
   
     }])
     .controller('ArchivedCtr', ['$scope', 'taskServ', function($scope,taskServ){
       $scope.taskList = taskServ.taskList;
+      $scope.archivedList = taskServ.archivedList;
 
       $scope.delete = function (index) {
-        $scope.taskList.splice(index, 1);
+        $scope.archivedList.splice(index, 1);
       };
     // $scope.archive = function (index) {
       //   $scope.taskList[index].isArchived = true;
