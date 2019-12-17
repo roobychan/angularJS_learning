@@ -18,6 +18,5 @@
   },
   "homepage": "https://github.com/roobychan/angularJS_learning#readme",
   "dependencies": {
-    "angular": "^1.7.9"
   }
 }
